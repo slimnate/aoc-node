@@ -1,0 +1,21 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Code Advent calendar - adventofcode.com",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon",
+    "build": "rimraf ./build && tsc",
+    "run": "npm run build && node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.7"
+  },
+  "type": "module"
+}
