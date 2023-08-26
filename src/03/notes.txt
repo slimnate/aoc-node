@@ -18,3 +18,10 @@ PmmdzqPrVvPwwTWBwg
 wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
 ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw
+
+Part 2:
+
+Each 3 lines are a group of elves
+Each group has one item shared between all 3 sacks
+The shared item among all three is the badge
+Must find the sum of priorities of the badge item for each group
