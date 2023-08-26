@@ -1,0 +1,20 @@
+Each line is a rucksack
+Each rucksack has two compartments, half and half
+Find the item type (letter) that appears in both compartments
+Each item has priority: a-z (1-26) A-Z (27-52)
+
+Find total priority for all items that appear in both compartments
+
+Algo:
+Split each line in half
+Compare each letter of first half to letters in second half, find value of matching letter
+Compute that letters priority, and add to total.
+
+
+Sample input:
+vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw
