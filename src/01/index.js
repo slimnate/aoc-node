@@ -1,15 +1,13 @@
 /**
  * https://adventofcode.com/2022/day/1/answer
  */
-import { readFileSync } from 'fs';
-import { EOL } from 'os';
 import path from 'path';
+import { readFileAsLines } from '../helpers.js';
 
 function run() {
   // read data
   const inputPath = path.resolve('src/01/input.txt');
-  const input = readFileSync(inputPath).toString();
-  const lines = input.split(EOL);
+  const lines = readFileAsLines(inputPath);
 
   let elfCalorieCounts = [0];
   let currentElfIndex = 0;
