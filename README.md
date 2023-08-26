@@ -15,3 +15,5 @@ npm run aoc
 ```
 
 The challenge picker allows you to choose a challenge day to run from the command line. To get full context however, you will need to access the original question on adventofcode.com, as most scripts simply output the answers without any context of the question.
+
+![challenge picker](aoc-cmd.png)
