@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "aoc": "node src/index.js",
+    "debug": "node --inspect src/index.js",
     "dev": "npx nodemon",
     "build": "rimraf ./build && tsc",
     "run": "npm run build && node build/index.js",
