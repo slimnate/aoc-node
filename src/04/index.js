@@ -20,6 +20,17 @@ class NumRange {
   contains = function (other) {
     return this.start <= other.start && this.end >= other.end;
   };
+
+  overlaps = function (other) {
+    return (
+      (this.start <= other.end && this.end >= other.end) ||
+      (this.end >= other.start && this.start <= other.end)
+    );
+  };
+
+  toString = function () {
+    return `Range(${this.start}, ${this.end})`;
+  };
 }
 
 /**
@@ -61,17 +72,25 @@ function parseInput() {
 function run() {
   const pairs = parseInput();
 
-  // part 1, get number of pairs which one fully contains the other
   let fullyContainedCount = 0;
+  let overlapCount = 0;
+
   for (let pair of pairs) {
     const [first, second] = pair;
 
+    // part 1, get number of pairs which one fully contains the other
     if (first.contains(second) || second.contains(first)) {
       fullyContainedCount++;
+    }
+
+    //part 2, get number of pairs which partially overlap
+    if (first.overlaps(second) || second.overlaps(first)) {
+      overlapCount++;
     }
   }
 
   console.log(`fullyContainedCount: ${fullyContainedCount}`);
+  console.log(`overlapCount: ${overlapCount}`);
 }
 
 export { run };

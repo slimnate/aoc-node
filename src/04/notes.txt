@@ -8,3 +8,6 @@ Find the number of pairs where one fully contains the other
 Algo:
 Parse pairs into ranges
 For each pair, determine if one range is fully contained within the other.
+
+Part 2:
+Count pairs with any overlap
