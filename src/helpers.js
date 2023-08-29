@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { EOL } from 'os';
+import { path } from 'path';
 
 /**
  * Read entire file contents as string
@@ -20,4 +21,8 @@ function readFileAsLines(path) {
   return readFileAsString(path).split(EOL);
 }
 
-export { readFileAsLines, readFileAsString };
+function readInputForChallenge(challenge) {
+  return readFileAsLines(path.resolve(`src/${challenge}/input.txt`));
+}
+
+export { readFileAsLines, readFileAsString, readInputForChallenge };

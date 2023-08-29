@@ -1,13 +1,11 @@
 /**
  * https://adventofcode.com/2022/day/1/answer
  */
-import path from 'path';
-import { readFileAsLines } from '../helpers.js';
+import { readInputForChallenge } from '../helpers.js';
 
 function run() {
   // read data
-  const inputPath = path.resolve('src/01/input.txt');
-  const lines = readFileAsLines(inputPath);
+  const lines = readInputForChallenge('01');
 
   let elfCalorieCounts = [0];
   let currentElfIndex = 0;

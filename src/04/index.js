@@ -1,5 +1,4 @@
-import path from 'path';
-import { readFileAsLines } from '../helpers.js';
+import { readInputForChallenge } from '../helpers.js';
 
 class NumRange {
   /**
@@ -51,7 +50,7 @@ function parseRangeString(str) {
  * @returns {[[NumRange, NumRange]]} array of tuples containing pairs of ranges
  */
 function parseInput() {
-  const lines = readFileAsLines(path.resolve('src/04/input.txt'));
+  const lines = readInputForChallenge('04');
   let pairs = [];
   for (let line of lines) {
     const ranges = line.split(',');

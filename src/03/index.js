@@ -1,5 +1,4 @@
-import path from 'path';
-import { readFileAsLines } from '../helpers.js';
+import { readInputForChallenge } from '../helpers.js';
 
 function getPriority(item) {
   const charCode = item.charCodeAt(0);
@@ -50,8 +49,7 @@ function getSharedItem(packs) {
 }
 
 function run() {
-  const inputPath = path.resolve('src/03/input.txt');
-  const lines = readFileAsLines(inputPath);
+  const lines = readInputForChallenge('03');
 
   let totalPriority = 0;
 

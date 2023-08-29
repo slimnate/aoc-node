@@ -1,5 +1,4 @@
-import { readFileAsLines } from '../helpers.js';
-import path from 'path';
+import { readInputForChallenge } from '../helpers.js';
 
 class Choice {
   /**
@@ -92,8 +91,7 @@ const DESIRED_RESULTS = {
 };
 
 function run() {
-  const inputPath = path.resolve('src/02/input.txt');
-  const lines = readFileAsLines(inputPath);
+  const lines = readInputForChallenge('02');
 
   let roundCount = 0;
   let idealScore = 0;
