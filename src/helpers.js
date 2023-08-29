@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { EOL } from 'os';
-import { path } from 'path';
+import path from 'path';
 
 /**
  * Read entire file contents as string
