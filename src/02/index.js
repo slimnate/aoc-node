@@ -3,7 +3,7 @@ import path from 'path';
 
 class Choice {
   /**
-   *
+   * Create a new `Choice` object from a string
    * @param {'A' | 'B' | 'C' | 'X' | 'Y' | 'Z'} s choice string
    */
   constructor(s) {
@@ -54,10 +54,17 @@ class Choice {
   };
 }
 
+/**
+ * Determine what choice you should make to have the desired outcome
+ * against a given choice
+ * @param {Choice} other The opponents choice
+ * @param {'win'|'lose'|'draw'} desiredResult The desired result
+ * @returns {Choice} the choice you should play to get desired result against `other`
+ */
 function getNeededChoiceForDesiredResult(other, desiredResult) {
   const possibleChoices = [new Choice('A'), new Choice('B'), new Choice('C')];
   const neededChoice = possibleChoices.filter((possibleChoice) => {
-    if (possibleChoice.result(other) === desiredResult) return true;
+    return possibleChoice.result(other) === desiredResult;
   })[0];
 
   // console.log(
