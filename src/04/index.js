@@ -20,6 +20,11 @@ class NumRange {
     return this.start <= other.start && this.end >= other.end;
   };
 
+  /**
+   * Test if any part of this range overlaps `other` range.
+   * @param {NumRange} other the range to compare against
+   * @returns `true` if this range overlaps the other range at all.
+   */
   overlaps = function (other) {
     return (
       (this.start <= other.end && this.end >= other.end) ||
@@ -33,15 +38,16 @@ class NumRange {
 }
 
 /**
- * Parse a string in the format #-#,#-# (where # represents any number of digits)
- * into two `NumRange` objects.
+ * Parse a string in the format #-# (where # represents any number of digits)
+ * into a `NumRange` object.
  * @param {String} str string containing two ranges to parse
- * @returns {[NumRange, NumRange]} a tuple containing each of the ranges
+ * @returns {NumRange} a tuple containing each of the ranges
  */
 function parseRangeString(str) {
   const numStrings = str.split('-');
   const start = parseInt(numStrings[0]);
   const end = parseInt(numStrings[1]);
+
   return new NumRange(start, end);
 }
 
@@ -57,8 +63,6 @@ function parseInput() {
     const range1 = parseRangeString(ranges[0]);
     const range2 = parseRangeString(ranges[1]);
 
-    // console.log(range1);
-    // console.log(range2);
     pairs.push([range1, range2]);
   }
 
@@ -83,7 +87,7 @@ function run() {
     }
 
     //part 2, get number of pairs which partially overlap
-    if (first.overlaps(second) || second.overlaps(first)) {
+    if (first.overlaps(second)) {
       overlapCount++;
     }
   }
