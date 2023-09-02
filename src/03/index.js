@@ -16,7 +16,7 @@ function getPriority(item) {
  * @param {string[]} packs Return the shared items among all of the provided packs
  * @returns {string} string with all the items shared in each pack. Empty string if none shared
  */
-function getSharedItem(packs) {
+function getSharedItems(packs) {
   // if only one pack provided, return it, or we will get errors when trying to compare with pack 2.
   if (packs.length < 2) {
     return packs[0];
@@ -44,16 +44,15 @@ function getSharedItem(packs) {
     return sharedItems;
   } else {
     // if there are still multiple packs remaining, recursively call this method until all packs have been searched.
-    return getSharedItem(packs);
+    return getSharedItems(packs);
   }
 }
 
 function run() {
   const lines = readInputForChallenge('03');
 
-  let totalPriority = 0;
-
   // part 1
+  let totalPriority = 0;
   for (const line of lines) {
     // split into packs
     let sackSize = line.length;
@@ -62,26 +61,20 @@ function run() {
     let pack2 = line.substring(packSize);
 
     // find matching item
-    const matchingItem = getSharedItem([pack1, pack2]);
+    const matchingItem = getSharedItems([pack1, pack2]);
 
     // get value of item
     totalPriority += getPriority(matchingItem);
-
-    // console.log(pack1);
-    // console.log(pack2);
-    // console.log(matchingItem);
-    // console.log(totalPriority);
   }
 
   console.log(totalPriority);
 
-  let groupPriority = 0;
   // part 2
+  let groupPriority = 0;
   for (let i = 0; i < lines.length; i = i + 3) {
     const groupLines = lines.slice(i, i + 3);
 
-    const sharedItem = getSharedItem(groupLines);
-    // console.log(sharedItem);
+    const sharedItem = getSharedItems(groupLines);
 
     groupPriority += getPriority(sharedItem);
   }

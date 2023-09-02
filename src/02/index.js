@@ -66,9 +66,6 @@ function getNeededChoiceForDesiredResult(other, desiredResult) {
     return possibleChoice.result(other) === desiredResult;
   })[0];
 
-  // console.log(
-  //   `to ${desiredResult} against ${other.choice}, play ${neededChoice.choice}`
-  // );
   return neededChoice;
 }
 
@@ -125,12 +122,6 @@ function run() {
     const actualResult = actualChoice.result(opponentsChoice);
     actualScore += RESULT_VALUE[actualResult];
     actualScore += CHOICE_VALUE[actualChoice.choice];
-
-    // console.log(
-    //   `round ${roundCount}: ${mine.choice} vs ${opponents.choice} = ${result} | roundScore = ${roundScore}, totalScore = ${score}`
-    // );
-
-    // if (roundCount > 20) break;
   }
 
   console.log(`Ideal score (problem 1): ${idealScore}`);
