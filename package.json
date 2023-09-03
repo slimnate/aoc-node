@@ -4,17 +4,20 @@
   "description": "Code Advent calendar - adventofcode.com",
   "main": "index.js",
   "scripts": {
-    "aoc": "node src/index.js",
-    "debug": "node --inspect src/index.js",
-    "dev": "npx nodemon",
-    "build": "rimraf ./build && tsc",
-    "run": "npm run build && node build/index.js",
+    "aoc": "npm run build && node build/index.js",
+    "copyInput": "copyfiles -u 1 src/**/input.txt build",
+    "debug": "npm run build && node --inspect build/index.js",
+    "build": "rimraf ./build && tsc && npm run copyInput",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.5.9",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "inquirer": "^9.2.7"
