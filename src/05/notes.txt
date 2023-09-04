@@ -1,0 +1,2 @@
+Given a set state of x stacks, where x <= 9, with any number of crates on each stack, calculate the results of any number of moves between stacks.
+
