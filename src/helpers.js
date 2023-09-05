@@ -25,4 +25,13 @@ function readInputForChallenge(challenge) {
   return readFileAsLines(path.resolve(`src/${challenge}/input.txt`));
 }
 
-export { readFileAsLines, readFileAsString, readInputForChallenge };
+function deepCopy(array) {
+  return array.map((val) => {
+    if (Array.isArray(val)) {
+      return deepCopy(val);
+    }
+    return val;
+  });
+}
+
+export { readFileAsLines, readFileAsString, readInputForChallenge, deepCopy };
